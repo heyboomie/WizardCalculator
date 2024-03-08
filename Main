@@ -1,1 +1,46 @@
-i
+cardList = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+totalMatch = True
+rounds = input("round? >>")
+rounds = int(rounds)
+for i in range (0, rounds):
+    valueMatch = False
+    suitMatch = False
+    while suitMatch == False:
+        fsuit = input("suit/wiz/je? >> ")
+        fsuit = fsuit.capitalize()
+        match fsuit:
+            case "Diamonds":
+                suitMatch = True
+                continue
+            case "Clubs":
+                suitMatch = True
+                continue
+            case "Hearts":
+                suitMatch = True
+                continue
+            case "Spades":
+                suitMatch = True
+                continue
+            case "Jester":
+                suitMatch = True
+                valueMatch = True
+                fvalue = 0
+                continue
+            case "Wizard":
+                suitMatch = True
+                valueMatch = True
+                fvalue = 115
+                continue
+            case _:
+                print("put a suit, wizard, or jester. Full name")
+                
+    while valueMatch == False:
+        fvalue = input("Value of the card? A = 14 # = the # J = 11 Q = 12 K = 13 >> ")
+        fvalue = int(fvalue)
+        if fvalue == 1:
+            print("do you mean 14?")
+        if fvalue >= 2 and fvalue <= 14:
+            valueMatch = True
+            continue
+        if fvalue > 14:
+            print ("to big:(")
